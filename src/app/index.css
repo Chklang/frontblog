@@ -1,0 +1,26 @@
+body {
+	background-color: #E05E40;
+	background-position: top center;
+	background-attachment: fixed;
+}
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+}
+
+.thumbnail img.pull-right {
+  width: 50px;
+}
+.test {
+	background-color:black;
+	border:1px solid white;
+	width:202px;
+	height:202px;
+	display:inline-flex;
+}

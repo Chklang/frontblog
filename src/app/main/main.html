@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="panel panel-default" style="margin-top:10px;">
+		<div class="panel-body">
+			Par dates :
+				<button ng-click="main.filtreDate = null">Toutes</button>
+			<span ng-repeat="date in main.dates">
+				<button ng-click="main.filtreDate = date.string">{{date.obj.getDate()}}/{{date.obj.getMonth()+1}}/{{date.obj.getYear()}}</button>
+			</span>
+		</div>
+	</div>
+	<div ng-if="main.filtreDate == null || main.filtreDate == element.date" ng-repeat="element in main.elements">
+		<div class="panel panel-default" style="margin-top:10px;">
+			<div class="panel-heading">
+				<span style="float:right">{{element.date}}</span>
+				<h3 class="panel-title">
+					{{element.title}}
+				</h3>
+			</div>
+			<div class="panel-body">
+				<div style="display:flex; justify-content:center; flex-wrap:wrap;">
+					<span class="test" ng-repeat="image in element.images track by $index">
+						<img ng-src="publications/min_{{image.filename}}" ng-click="main.showimages(element, $index);" style="max-width:200px; max-height:200px;margin:auto;" />
+					</span>
+				</div>
+				<p style="margin-top:5px;" ng-bind-html="element.text"></p>
+			</div><!--
+			<div class="panel-footer">
+				Panel footer
+			</div>-->
+		</div>
+		
+	</div>
+
+</div>

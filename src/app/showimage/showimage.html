@@ -1,0 +1,13 @@
+<div>
+	<h3>Photo {{ctrl.indexCourant+1}}/{{ctrl.element.images.length}}</h3>
+	<div style="display:flex; justify-content:center; flex-wrap:wrap;">
+		<span ng-if="$index == ctrl.indexCourant" class="test" ng-repeat="image in ctrl.element.images track by $index" style="width:800px; height:600px;">
+			<img ng-src="publications/{{image.filename}}" style="max-width:100%; max-height:100%; margin:auto;" />
+			<div>{{image.description}}</div>
+		</span>
+	</div>
+	<div style="text-align: center;">
+		<span style="cursor:pointer" ng-click="ctrl.previous()">Précédente</span>
+		<span style="cursor:pointer" ng-click="ctrl.next()">Suivante</span>
+	</div>
+</div>
