@@ -2,13 +2,18 @@
 	<div class="panel panel-default" style="margin-top:10px;">
 		<div class="panel-body">
 			Par dates :
-				<button ng-click="main.filtreDate = null">Toutes</button>
-			<span ng-repeat="date in main.dates">
-				<button ng-click="main.filtreDate = date.string">{{date.obj.getDate()}}/{{date.obj.getMonth()+1}}/{{date.obj.getYear()}}</button>
-			</span>
+				<span style="cursor:pointer" class="btn btn-primary btn-default" ng-click="main.filtreDate = null">Aucune (Choisir une date)</span>
+				<span ng-repeat="date in main.dates" style="cursor:pointer; margin-left: 5px;" class="btn btn-primary btn-default" ng-click="main.filtreDate = date.string">{{date.obj.getDate()}}/{{date.obj.getMonth()+1}}/{{date.obj.getYear()}}</span>
 		</div>
 	</div>
-	<div ng-if="main.filtreDate == null || main.filtreDate == element.date" ng-repeat="element in main.elements">
+	<div ng-if="main.filtreDate == null">
+		<div class="panel panel-default" style="margin-top:10px;">
+			<div class="panel-body">
+				<p style="margin-top:5px;">Aucune date sélectionnée</p>
+			</div>
+		</div>
+	</div>
+	<div ng-if="main.filtreDate != null && main.filtreDate == element.date" ng-repeat="element in main.elements">
 		<div class="panel panel-default" style="margin-top:10px;">
 			<div class="panel-heading">
 				<span style="float:right">{{element.date}}</span>
@@ -19,16 +24,12 @@
 			<div class="panel-body">
 				<div style="display:flex; justify-content:center; flex-wrap:wrap;">
 					<span class="test" ng-repeat="image in element.images track by $index">
-						<img ng-src="publications/min_{{image.filename}}" ng-click="main.showimages(element, $index);" style="max-width:200px; max-height:200px;margin:auto;" />
+						<img ng-src="conf/mini/{{image.filename}}" title="{{image.description}}" alt="{{image.description}}" ng-click="main.showimages(element, $index);" style="max-width:200px; max-height:200px;margin:auto;cursor:pointer" />
 					</span>
 				</div>
 				<p style="margin-top:5px;" ng-bind-html="element.text"></p>
-			</div><!--
-			<div class="panel-footer">
-				Panel footer
-			</div>-->
+			</div>
 		</div>
-		
 	</div>
 
 </div>
