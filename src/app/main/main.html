@@ -23,8 +23,10 @@
 			</div>
 			<div class="panel-body">
 				<div style="display:flex; justify-content:center; flex-wrap:wrap;">
-					<span class="test" ng-repeat="image in element.images track by $index">
-						<img ng-src="conf/mini/{{image.filename}}" title="{{image.description}}" alt="{{image.description}}" ng-click="main.showimages(element, $index);" style="max-width:200px; max-height:200px;margin:auto;cursor:pointer" />
+					<span class="test" ng-repeat="media in element.medias track by $index" ng-click="main.showimages(element, $index);">
+						<img ng-if="media.type == 'image'" ng-src="conf/mini/{{media.filename}}" title="{{image.description}}" alt="{{image.description}}" style="max-width:200px; max-height:200px;margin:auto" />
+						<img ng-if="media.type == 'video'" ng-src="assets/images/play.gif" style="max-width:200px; max-height:200px;margin-left:46px;margin-top:46px;position:absolute;z-index:2;" />
+						<img ng-if="media.type == 'video'" ng-src="conf/mini/{{media.poster}}" title="{{image.description}}" alt="{{image.description}}" style="max-width:200px; max-height:200px;margin:auto;z-index:1;" />
 					</span>
 				</div>
 				<p style="margin-top:5px;" ng-bind-html="element.text"></p>

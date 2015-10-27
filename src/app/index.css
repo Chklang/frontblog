@@ -23,4 +23,5 @@ body {
 	width:202px;
 	height:202px;
 	display:inline-flex;
+	cursor: pointer;
 }

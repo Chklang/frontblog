@@ -10,7 +10,7 @@ function ModalInstanceCtrl($scope, $modalInstance, elementPublication, indexCour
 	this.indexCourant = indexCourant;
 	this.element = elementPublication;
 	this.next = function () {
-		if (this.indexCourant < (this.element.images.length-1)) {
+		if (this.indexCourant < (this.element.medias.length-1)) {
 			this.indexCourant++;
 		}
 	}
@@ -18,6 +18,9 @@ function ModalInstanceCtrl($scope, $modalInstance, elementPublication, indexCour
 		if (this.indexCourant > 0) {
 			this.indexCourant--;
 		}
+	}
+	this.getSrcVideo = function (media) {
+		return "conf/full/" + media.video;
 	}
 };
 })();

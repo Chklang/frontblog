@@ -4,6 +4,8 @@
   angular
     .module('frontblog')
     .controller('MainController', MainController);
+	
+	
 
   /** @ngInject */
   function MainController($uibModal, Configuration) {
