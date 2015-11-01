@@ -64,5 +64,10 @@
 			}
 		});
 	};
+	
+	vm.changeDate = function (pNewDate, pGlobalController) {
+		vm.filtreDate = pNewDate.string;
+		pGlobalController.changeDate(pNewDate.obj);
+	}
   }
 })();

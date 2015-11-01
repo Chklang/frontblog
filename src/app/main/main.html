@@ -3,7 +3,7 @@
 		<div class="panel-body">
 			Par dates :
 				<span style="cursor:pointer" class="btn btn-primary btn-default" ng-click="main.filtreDate = null">Aucune (Choisir une date)</span>
-				<span ng-repeat="date in main.dates" style="cursor:pointer; margin-left: 5px;" class="btn btn-primary btn-default" ng-click="main.filtreDate = date.string">{{date.obj.getDate()}}/{{date.obj.getMonth()+1}}/{{date.obj.getYear()}}</span>
+				<span ng-repeat="date in main.dates" style="cursor:pointer; margin-left: 5px;" class="btn btn-primary btn-default" ng-click="main.changeDate(date, global)">{{date.obj.getDate()}}/{{date.obj.getMonth()+1}}/{{date.obj.getYear()}}</span>
 		</div>
 	</div>
 	<div ng-if="main.filtreDate == null">
