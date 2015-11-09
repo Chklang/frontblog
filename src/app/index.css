@@ -25,3 +25,13 @@ body {
 	display:inline-flex;
 	cursor: pointer;
 }
+videogular > div {
+	width: 100%;
+	height: 100%;
+}
+.vjs-control {
+	width: 6em !important;
+}
+.vjs-resolution-button ul.vjs-menu-content {
+	width: 6em !important;
+}
